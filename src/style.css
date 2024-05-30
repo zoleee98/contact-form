@@ -1,0 +1,91 @@
+@font-face {
+	font-family: 'Karla';
+	font-weight: 400;
+	src: local('Karla'),
+		url('assets/fonts/static/Karla-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Karla';
+	font-weight: 700;
+	src: local('Karla'),
+		url('assets/fonts/static/Karla-Bold.ttf') format('truetype');
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font: inherit;
+}
+
+:root {
+	--color-primary-200: hsl(148, 38%, 91%);
+	--color-primary-600: hsl(169, 82%, 27%);
+	--color-red: hsl(0, 66%, 54%);
+	--color-neutral: hsl(0, 0%, 100%);
+	--color-neutral-500: hsl(186, 15%, 59%);
+	--color-neutral-900: hsl(187, 24%, 22%);
+	--ff-base: 'Karla', sans-serif;
+	--fs-h1: 2rem;
+	--radius-base: 15px;
+	--radius-sm: 5px;
+	--padding-base: 2rem;
+	--padding-sm: 0.75rem;
+}
+
+body {
+	font-family: var(--ff-base);
+}
+
+h1 {
+	font-size: var(--fs-h1);
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+main {
+	background: var(--color-primary-200);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card {
+	flex-grow: 1;
+	max-width: 560px;
+	background: var(--color-neutral);
+	padding: var(--padding-base);
+	border-radius: var(--radius-base);
+	color: var(--color-neutral-900);
+}
+
+.col {
+	display: flex;
+	gap: 1rem;
+}
+
+form > .col {
+	margin-bottom: 1rem;
+}
+
+.col > * {
+	flex-grow: 1;
+	flex-basis: 0;
+}
+
+label input {
+	margin-top: 0.5rem;
+}
+
+input,
+button {
+	width: 100%;
+	padding: var(--padding-sm);
+	border-radius: var(--radius-sm);
+}
+
+input {
+	border: 1px solid var(--color-neutral-500);
+}
