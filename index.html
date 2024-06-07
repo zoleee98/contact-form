@@ -2,11 +2,114 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="stylesheet" href="src/style.css" />
 		<title>Vite + TS</title>
 	</head>
 	<body>
+		<main>
+			<div class="card">
+				<h1>Contact Us</h1>
+				<form>
+					<div class="col">
+						<div>
+							<label for="firstname">First Name</label>
+							<input
+								type="text"
+								name="firstname"
+								id="firstname"
+								class="form-control"
+								required
+							/>
+						</div>
+						<div>
+							<label for="lastname">Last Name</label>
+							<input
+								type="text"
+								name="lastname"
+								id="lastname"
+								class="form-control"
+								required
+							/>
+						</div>
+					</div>
+					<div class="col">
+						<div>
+							<label for="email">Email Address</label>
+							<input
+								type="email"
+								name="email"
+								id="email"
+								class="form-control"
+								required
+							/>
+						</div>
+					</div>
+					<fieldset>
+						<legend>Query Type</legend>
+						<div class="col">
+							<label class="form-control" for="general">
+								<input
+									type="radio"
+									name="querytype"
+									value="general"
+									id="general"
+									required
+								/>
+								<div
+									class="custom-radio"
+									aria-hidden="true"
+								></div>
+								General Enquiry
+							</label>
+							<label class="form-control" for="support">
+								<input
+									type="radio"
+									name="querytype"
+									value="support"
+									id="support"
+									required
+								/>
+								<div
+									class="custom-radio"
+									aria-hidden="true"
+								></div>
+								Support Request
+							</label>
+						</div>
+					</fieldset>
+					<div class="col">
+						<div>
+							<label for="message">Message</label>
+							<textarea
+								name="message"
+								class="form-control"
+								id="message"
+								rows="4"
+								required
+							></textarea>
+						</div>
+					</div>
+					<div class="col">
+						<label for="consent">
+							<input
+								type="checkbox"
+								name="consent"
+								id="consent"
+								required
+							/>
+							<div
+								class="custom-checkbox"
+								aria-hidden="true"
+							></div>
+							I consent to being contacted by the team.
+						</label>
+					</div>
+					<button>Submit</button>
+				</form>
+			</div>
+		</main>
 		<script type="module" src="/src/main.ts"></script>
 	</body>
 </html>
