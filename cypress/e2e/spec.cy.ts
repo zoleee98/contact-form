@@ -1,6 +1,6 @@
 describe('template spec', () => {
 	beforeEach(() => {
-		cy.visit('http://localhost:5173/');
+		cy.visit('/');
 	});
 	it('passes', () => {
 		cy.title().should('equal', 'Vite + TS');
