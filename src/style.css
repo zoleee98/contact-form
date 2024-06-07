@@ -90,6 +90,10 @@ fieldset {
 	outline: 0;
 }
 
+.form-control:hover {
+	border: 1px solid var(--color-primary-600);
+}
+
 .form-control:focus-within {
 	outline: 1px solid var(--color-primary-600);
 }
