@@ -32,6 +32,7 @@
 	--radius-sm: 5px;
 	--padding-base: 2rem;
 	--padding-sm: 0.75rem;
+	--gap-base: 1rem;
 }
 
 body {
@@ -61,14 +62,16 @@ main {
 	color: var(--color-neutral-900);
 }
 
-form > * + * {
-	margin-top: 1.5rem;
+form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-base);
 }
 
 .col {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: var(--gap-base);
 }
 
 .col > * {
@@ -86,7 +89,6 @@ fieldset {
 	padding: var(--padding-sm);
 	border-radius: var(--radius-sm);
 	border: 1px solid var(--color-neutral-500);
-	margin-top: 0.75rem;
 	outline: 0;
 }
 
