@@ -68,6 +68,12 @@ form {
 	gap: var(--gap-base);
 }
 
+label:not([for='consent'], .form-control),
+legend {
+	display: block;
+	margin-bottom: 0.75rem;
+}
+
 .col {
 	display: flex;
 	flex-wrap: wrap;
