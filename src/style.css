@@ -82,8 +82,7 @@ legend {
 
 .col > * {
 	flex-grow: 1;
-	flex-basis: 0;
-	min-width: 250px;
+	flex-basis: 250px;
 }
 
 fieldset {
