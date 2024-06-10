@@ -173,15 +173,15 @@ label[for='consent'] {
 	margin-right: 1rem;
 }
 
-input[name='consent']:focus + .custom-checkbox {
+input[name='consent']:focus + label .custom-checkbox {
 	outline: 2px solid var(--color-neutral-500);
 }
 
-input[name='consent']:checked + .custom-checkbox {
+input[name='consent']:checked + label .custom-checkbox {
 	background: var(--color-primary-600);
 }
 
-input[name='consent']:checked + .custom-checkbox::before {
+input[name='consent']:checked + label .custom-checkbox::before {
 	content: '';
 	width: 8px;
 	height: 5px;
