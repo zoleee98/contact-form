@@ -16,3 +16,4 @@ jobs:
           browser: chrome
           build: npm run build
           start: npm run preview
+          wait-on: 'http://127.0.0.1:3000/'
