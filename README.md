@@ -2,6 +2,19 @@
 
 This is a solution to the [Contact form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/contact-form--G-hYlqKJj). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
+## How to use
+
+```
+git clone https://github.com/zoleee98/contact-form.git
+cd contact-form
+npm install
+```
+
+To run dev server:
+```
+npm run dev
+```
+
 ## Overview
 
 ### The challenge
