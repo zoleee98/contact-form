@@ -20,6 +20,7 @@
 								name="firstname"
 								id="firstname"
 								class="form-control"
+								autocomplete="given-name"
 								required
 							/>
 						</div>
@@ -30,6 +31,7 @@
 								name="lastname"
 								id="lastname"
 								class="form-control"
+								autocomplete="family-name"
 								required
 							/>
 						</div>
@@ -42,6 +44,7 @@
 								name="email"
 								id="email"
 								class="form-control"
+								autocomplete="email"
 								required
 							/>
 						</div>
@@ -49,7 +52,7 @@
 					<fieldset>
 						<legend>Query Type</legend>
 						<div class="col">
-							<label class="form-control" for="general">
+							<div>
 								<input
 									type="radio"
 									name="querytype"
@@ -57,13 +60,15 @@
 									id="general"
 									required
 								/>
-								<div
-									class="custom-radio"
-									aria-hidden="true"
-								></div>
-								General Enquiry
-							</label>
-							<label class="form-control" for="support">
+								<label class="form-control" for="general">
+									<div
+										class="custom-radio"
+										aria-hidden="true"
+									></div>
+									General Enquiry
+								</label>
+							</div>
+							<div>
 								<input
 									type="radio"
 									name="querytype"
@@ -71,12 +76,14 @@
 									id="support"
 									required
 								/>
-								<div
-									class="custom-radio"
-									aria-hidden="true"
-								></div>
-								Support Request
-							</label>
+								<label class="form-control" for="support">
+									<div
+										class="custom-radio"
+										aria-hidden="true"
+									></div>
+									Support Request
+								</label>
+							</div>
 						</div>
 					</fieldset>
 					<div class="col">
