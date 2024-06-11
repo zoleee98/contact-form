@@ -14,7 +14,9 @@
 				<form>
 					<div class="col">
 						<div>
-							<label for="firstname">First Name</label>
+							<label class="required" for="firstname"
+								>First Name</label
+							>
 							<input
 								type="text"
 								name="firstname"
@@ -26,7 +28,9 @@
 							/>
 						</div>
 						<div>
-							<label for="lastname">Last Name</label>
+							<label class="required" for="lastname"
+								>Last Name</label
+							>
 							<input
 								type="text"
 								name="lastname"
@@ -40,7 +44,9 @@
 					</div>
 					<div class="col">
 						<div>
-							<label for="email">Email Address</label>
+							<label class="required" for="email"
+								>Email Address</label
+							>
 							<input
 								type="email"
 								name="email"
@@ -53,7 +59,7 @@
 						</div>
 					</div>
 					<fieldset>
-						<legend>Query Type</legend>
+						<legend class="required">Query Type</legend>
 						<div class="col">
 							<div>
 								<input
@@ -91,7 +97,9 @@
 					</fieldset>
 					<div class="col">
 						<div>
-							<label for="message">Message</label>
+							<label class="required" for="message"
+								>Message</label
+							>
 							<textarea
 								name="message"
 								class="form-control"
@@ -103,19 +111,23 @@
 						</div>
 					</div>
 					<div class="col">
-						<label for="consent">
+						<div>
 							<input
 								type="checkbox"
 								name="consent"
 								id="consent"
 								required
 							/>
-							<div
-								class="custom-checkbox"
-								aria-hidden="true"
-							></div>
-							I consent to being contacted by the team.
-						</label>
+							<label for="consent">
+								<div
+									class="custom-checkbox"
+									aria-hidden="true"
+								></div>
+								<span class="required">
+									I consent to being contacted by the team.
+								</span>
+							</label>
+						</div>
 					</div>
 					<button>Submit</button>
 				</form>

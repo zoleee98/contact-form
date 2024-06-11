@@ -32,6 +32,7 @@
 	--radius-sm: 5px;
 	--padding-base: 2rem;
 	--padding-sm: 0.75rem;
+	--gap-base: 1.25rem;
 }
 
 body {
@@ -56,25 +57,32 @@ main {
 	flex-grow: 1;
 	max-width: 700px;
 	background: var(--color-neutral);
-	padding: min(var(--padding-base), 3%);
+	padding: var(--padding-base) min(var(--padding-base), 5%);
 	border-radius: var(--radius-base);
 	color: var(--color-neutral-900);
 }
 
-form > * + * {
-	margin-top: 1.5rem;
+form {
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-base);
+}
+
+label:not([for='consent'], .form-control),
+legend {
+	display: block;
+	margin-bottom: 0.75rem;
 }
 
 .col {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1rem;
+	gap: var(--gap-base);
 }
 
 .col > * {
 	flex-grow: 1;
-	flex-basis: 0;
-	min-width: 250px;
+	flex-basis: 250px;
 }
 
 fieldset {
@@ -86,7 +94,6 @@ fieldset {
 	padding: var(--padding-sm);
 	border-radius: var(--radius-sm);
 	border: 1px solid var(--color-neutral-500);
-	margin-top: 0.75rem;
 	outline: 0;
 }
 
@@ -96,6 +103,12 @@ fieldset {
 
 .form-control:focus-within {
 	outline: 1px solid var(--color-primary-600);
+}
+
+.required::after {
+	content: '*';
+	margin-left: 0.5rem;
+	color: var(--color-primary-600);
 }
 
 label.form-control {
@@ -151,8 +164,8 @@ textarea {
 label[for='consent'] {
 	display: flex;
 	align-items: center;
-	gap: 0 1rem;
 	cursor: pointer;
+	margin: 0.5rem 0;
 }
 
 .custom-checkbox {
@@ -163,17 +176,18 @@ label[for='consent'] {
 	aspect-ratio: 1;
 	border: 1px solid var(--color-neutral-500);
 	cursor: pointer;
+	margin-right: 1rem;
 }
 
-input[name='consent']:focus + .custom-checkbox {
+input[name='consent']:focus + label .custom-checkbox {
 	outline: 2px solid var(--color-neutral-500);
 }
 
-input[name='consent']:checked + .custom-checkbox {
+input[name='consent']:checked + label .custom-checkbox {
 	background: var(--color-primary-600);
 }
 
-input[name='consent']:checked + .custom-checkbox::before {
+input[name='consent']:checked + label .custom-checkbox::before {
 	content: '';
 	width: 8px;
 	height: 5px;
