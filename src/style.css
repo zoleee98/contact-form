@@ -57,7 +57,7 @@ main {
 	flex-grow: 1;
 	max-width: 700px;
 	background: var(--color-neutral);
-	padding: min(var(--padding-base), 3%);
+	padding: var(--padding-base) min(var(--padding-base), 5%);
 	border-radius: var(--radius-base);
 	color: var(--color-neutral-900);
 }
