@@ -11,7 +11,7 @@
 		<main>
 			<div class="card">
 				<h1>Contact Us</h1>
-				<form>
+				<form novalidate>
 					<div class="col">
 						<div>
 							<label class="required" for="firstname"
@@ -26,6 +26,11 @@
 								required
 								maxlength="32"
 							/>
+							<div
+								class="error-message"
+								data-errorFor="firstname"
+								aria-live="polite"
+							></div>
 						</div>
 						<div>
 							<label class="required" for="lastname"
@@ -40,6 +45,11 @@
 								required
 								maxlength="32"
 							/>
+							<div
+								class="error-message"
+								data-errorFor="lastname"
+								aria-live="polite"
+							></div>
 						</div>
 					</div>
 					<div class="col">
@@ -56,6 +66,11 @@
 								required
 								maxlength="64"
 							/>
+							<div
+								class="error-message"
+								data-errorFor="email"
+								aria-live="polite"
+							></div>
 						</div>
 					</div>
 					<fieldset>
@@ -94,6 +109,11 @@
 								</label>
 							</div>
 						</div>
+						<div
+							class="error-message"
+							data-errorFor="querytype"
+							aria-live="polite"
+						></div>
 					</fieldset>
 					<div class="col">
 						<div>
@@ -108,6 +128,11 @@
 								required
 								maxlength="256"
 							></textarea>
+							<div
+								class="error-message"
+								data-errorFor="message"
+								aria-live="polite"
+							></div>
 						</div>
 					</div>
 					<div class="col">
@@ -123,10 +148,15 @@
 									class="custom-checkbox"
 									aria-hidden="true"
 								></div>
-								<span class="required">
+								<div class="required">
 									I consent to being contacted by the team.
-								</span>
+								</div>
 							</label>
+							<div
+								class="error-message"
+								data-errorFor="consent"
+								aria-live="polite"
+							></div>
 						</div>
 					</div>
 					<button>Submit</button>

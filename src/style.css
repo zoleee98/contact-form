@@ -68,12 +68,6 @@ form {
 	gap: var(--gap-base);
 }
 
-label:not([for='consent'], .form-control),
-legend {
-	display: block;
-	margin-bottom: 0.75rem;
-}
-
 .col {
 	display: flex;
 	flex-wrap: wrap;
@@ -83,6 +77,12 @@ legend {
 .col > * {
 	flex-grow: 1;
 	flex-basis: 250px;
+}
+
+label:not([for='consent'], .form-control),
+legend {
+	display: block;
+	margin-bottom: 0.75rem;
 }
 
 fieldset {
@@ -103,6 +103,15 @@ fieldset {
 
 .form-control:focus-within {
 	outline: 1px solid var(--color-primary-600);
+}
+
+.touched:not(:focus):invalid {
+	border: 1px solid var(--color-red);
+}
+
+.error-message {
+	color: var(--color-red);
+	margin-top: 0.5rem;
 }
 
 .required::after {
