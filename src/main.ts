@@ -31,3 +31,9 @@ form.addEventListener('submit', (e) => {
 	if (!formGroup.valid) return;
 	console.log('form submitted');
 });
+
+document
+	.querySelector('label[for="consent"]')
+	?.addEventListener('mousedown', (e) => {
+		e.preventDefault();
+	});
