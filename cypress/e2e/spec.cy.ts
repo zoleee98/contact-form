@@ -72,6 +72,33 @@ describe('contact-form', () => {
 		});
 	});
 
+	it('should hide error message when focused', () => {
+		cy.get('button').contains('Submit').click();
+		cy.get(
+			'#firstname, #lastname, #email, #general, #message, #consent'
+		).each((input) => {
+			cy.wrap(input)
+				.focus()
+				.invoke('attr', 'name')
+				.then((name) => {
+					cy.get(`[data-errorFor='${name}']`).should('have.text', '');
+				});
+		});
+	});
+
+	it('should hide error message when input filled correctly', () => {
+		cy.get('button').contains('Submit').click();
+		cy.get('#firstname').type('Zoltan');
+		cy.get('#lastname').type('Madar');
+		cy.get('#email').type('motya@example.com');
+		cy.get('#general').check({ force: true });
+		cy.get('#message').type('Hello from Motya!');
+		cy.get('#consent').check({ force: true });
+		cy.get('[data-errorFor]').each((errorFor) => {
+			cy.wrap(errorFor).should('have.text', '');
+		});
+	});
+
 	it('should give an error message for wrong email format', () => {
 		cy.get('#email').type('botya#protonmail.com').realPress('Tab');
 		cy.get('[data-errorFor="email"]').should(
