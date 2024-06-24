@@ -16,7 +16,8 @@ class FormGroup {
 	}
 
 	validate() {
-		for (const control of Object.values(this.controls)) {
+		const controls = Object.values(this.controls);
+		for (const control of controls) {
 			control.validate();
 			control.element.classList.add('touched');
 		}
