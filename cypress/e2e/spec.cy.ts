@@ -107,6 +107,32 @@ describe('contact-form', () => {
 		);
 	});
 
+	it('should reset the form on submit', () => {
+		cy.get('#firstname').type('Zoltan');
+		cy.get('#lastname').type('Madar');
+		cy.get('#email').type('motya@example.com');
+		cy.get('#general').check({ force: true });
+		cy.get('#message').type('Hello from Motya!');
+		cy.get('#consent').check({ force: true });
+		cy.get('button').contains('Submit').click();
+
+		cy.get(
+			'#firstname, #lastname, #email, #general, #message, #consent'
+		).each((input) => {
+			cy.wrap(input)
+				.should('not.have.class', 'touched')
+				.should('not.have.attr', 'aria-invalid');
+		});
+
+		cy.get('#firstname, #lastname, #email, #message').each((input) => {
+			cy.wrap(input).should('have.value', '');
+		});
+
+		cy.get('#general, #consent').each((input) => {
+			cy.wrap(input).should('not.be.checked');
+		});
+	});
+
 	it('should have input class `touched` when focused', () => {
 		cy.get(
 			'#firstname, #lastname, #email, #querytype, #message, #consent'
