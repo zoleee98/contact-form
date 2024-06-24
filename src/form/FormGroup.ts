@@ -21,6 +21,7 @@ class FormGroup {
 			control.validate();
 			control.element.classList.add('touched');
 		}
+		controls.find((control) => !control.valid)?.element.focus();
 	}
 }
 
