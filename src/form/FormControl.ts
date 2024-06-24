@@ -22,7 +22,10 @@ class FormControl<
 				input.classList.add('touched');
 				this.setErrorMessage('');
 			});
-			input.addEventListener('blur', () => this.validate());
+			input.addEventListener('blur', () => {
+				this.element.value = this.element.value.trim();
+				this.validate();
+			});
 		}
 	}
 
