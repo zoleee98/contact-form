@@ -19,23 +19,21 @@ class FormGroup {
 		const controls = Object.values(this.controls);
 		for (const control of controls) {
 			control.validate();
-			control.element.classList.add('touched');
+			control.markAsTouched();
 		}
 	}
 
-	reset() {
+	markAllAsTouched() {
 		const controls = Object.values(this.controls);
 		for (const control of controls) {
-			control.element.classList.remove('touched');
-			control.element.removeAttribute('aria-invalid');
-			if (
-				control.element.type == 'radio' ||
-				control.element.type == 'checkbox'
-			) {
-				control.element.checked = control.element.defaultChecked;
-				continue;
-			}
-			control.element.value = control.element.defaultValue;
+			control.markAsTouched();
+		}
+	}
+
+	markAllAsUntouched() {
+		const controls = Object.values(this.controls);
+		for (const control of controls) {
+			control.markAsUntouched();
 		}
 	}
 }

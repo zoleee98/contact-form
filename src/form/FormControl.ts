@@ -52,6 +52,14 @@ class FormControl<
 		this.setErrorMessage(message ?? '');
 		this.element.ariaInvalid = String(!this.valid);
 	}
+
+	markAsTouched() {
+		this.element.classList.add('touched');
+	}
+
+	markAsUntouched() {
+		this.element.classList.remove('touched');
+	}
 }
 
 type ValidationMessage = Partial<Record<keyof ValidityState, string>>;

@@ -29,7 +29,8 @@ form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	formGroup.validate();
 	if (!formGroup.valid) return;
-	formGroup.reset();
+	form.reset();
+	formGroup.markAllAsUntouched();
 });
 
 document

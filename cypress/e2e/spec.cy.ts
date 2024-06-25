@@ -119,9 +119,7 @@ describe('contact-form', () => {
 		cy.get(
 			'#firstname, #lastname, #email, #general, #message, #consent'
 		).each((input) => {
-			cy.wrap(input)
-				.should('not.have.class', 'touched')
-				.should('not.have.attr', 'aria-invalid');
+			cy.wrap(input).should('not.have.class', 'touched');
 		});
 
 		cy.get('#firstname, #lastname, #email, #message').each((input) => {
