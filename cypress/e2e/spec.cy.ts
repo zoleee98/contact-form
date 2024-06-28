@@ -131,6 +131,18 @@ describe('contact-form', () => {
 		});
 	});
 
+	it('should show snackbar on submit', () => {
+		cy.get('.snackbar').should('not.be.visible');
+		cy.get('#firstname').type('Zoltan');
+		cy.get('#lastname').type('Madar');
+		cy.get('#email').type('motya@example.com');
+		cy.get('#general').check({ force: true });
+		cy.get('#message').type('Hello from Motya!');
+		cy.get('#consent').check({ force: true });
+		cy.get('button').contains('Submit').click();
+		cy.get('.snackbar').should('be.visible');
+	});
+
 	it('should have input class `touched` when focused', () => {
 		cy.get(
 			'#firstname, #lastname, #email, #querytype, #message, #consent'
