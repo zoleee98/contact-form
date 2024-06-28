@@ -29,8 +29,9 @@
 	--ff-base: 'Karla', sans-serif;
 	--fs-h1: 2rem;
 	--radius-base: 15px;
-	--radius-sm: 5px;
+	--radius-sm: 7.5px;
 	--padding-base: 2rem;
+	--padding-lg: 1.5rem;
 	--padding-sm: 0.75rem;
 	--gap-base: 1.25rem;
 }
@@ -43,6 +44,38 @@ h1 {
 	font-size: var(--fs-h1);
 	font-weight: 700;
 	margin-bottom: 1rem;
+}
+
+.snackbar {
+	position: fixed;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	min-width: 5rem;
+	background: var(--color-neutral-900);
+	padding: var(--padding-lg);
+	border-radius: var(--radius-sm);
+	box-shadow: 0 5px 10px 0 hsla(0, 0%, 0%, 0.5);
+	opacity: 0;
+	transition: opacity 0.5s, top 0.5s;
+}
+
+.snackbar.show {
+	top: 1rem;
+	opacity: 1;
+}
+
+.snackbar-header {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: var(--color-neutral);
+	font-weight: 700;
+	margin-bottom: 0.75rem;
+}
+
+.snackbar-body {
+	color: var(--color-primary-200);
 }
 
 main {
@@ -217,4 +250,14 @@ button {
 
 button:hover {
 	background: var(--color-neutral-900);
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }

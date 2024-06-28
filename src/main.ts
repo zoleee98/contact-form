@@ -1,6 +1,7 @@
 import { FormControl } from './form/FormControl';
 import { FormGroup } from './form/FormGroup';
 import { errorMessage } from './data';
+import checkmark from './assets/images/icon-success-check.svg';
 
 const form = document.querySelector('form')!;
 const formGroup = new FormGroup({
@@ -24,13 +25,14 @@ const formGroup = new FormGroup({
 		valueMissing: errorMessage.requiredConsent,
 	}),
 });
+const snackbar = document.querySelector('.snackbar') as HTMLElement;
 
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	formGroup.validate();
-	if (!formGroup.valid) return;
-	form.reset();
-	formGroup.markAllAsUntouched();
+form.addEventListener('submit', handleSubmit);
+
+document.addEventListener('keyup', (e) => {
+	if (e.key == 'Escape') {
+		snackbar.classList.remove('show');
+	}
 });
 
 document
@@ -38,3 +40,25 @@ document
 	?.addEventListener('mousedown', (e) => {
 		e.preventDefault();
 	});
+
+function handleSubmit(e: SubmitEvent) {
+	e.preventDefault();
+	formGroup.validate();
+	if (!formGroup.valid) return;
+	form.reset();
+	formGroup.markAllAsUntouched();
+	snackbar.innerHTML = `
+		<div class="snackbar-header">
+			<img
+				src="${checkmark}"
+				alt="Checkmark"
+				aria-hidden="true"
+			/>
+			Message Sent!
+		</div>
+		<div class="snackbar-body">
+			Thanks for completing the form. We'll be in touch soon!
+		</div>
+	`;
+	snackbar.classList.add('show');
+}
